@@ -1,0 +1,115 @@
+/*                Welcome              */
+.welcome{
+    background: linear-gradient(rgb(0 0 0 / 60%),rgb(0 0 0 / 78%)), url(../img/welcome.jpg) no-repeat center/cover fixed;
+    padding: 2rem;
+    height: 100vh;
+}
+.welcome__box{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome__title{
+    color: var(--paleta1-d);
+    font-size: 3.5rem;
+    text-align: center;
+    line-height:5rem;
+    margin: 0;
+}
+.welcome__name{
+    color: var(--paleta1-b);
+}
+.welcome__text{
+    color: var(--paleta1-c);
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.welcome__resaltado{
+    color: var(--paleta1-d);
+}
+.welcome__btn{
+    color: var(--paleta1-d);
+    background: var(--paleta1-b);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    outline: none;
+    padding: 10px 20px;
+    width: 30%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease .5s;
+    text-transform: uppercase;
+}
+.welcome__btn:hover{
+    background: none;
+    border-color: var(--paleta1-b);
+    color: var(--paleta1-b);
+}
+
+/*                Welcome              */
+
+/*                MEDIA QUERIS              */
+@media screen and (max-width:775px){
+    .welcome{
+        padding: 1rem;
+    }
+    .welcome__box{
+        width: 90%;
+    }
+    .welcome__title{
+        font-size: 3.3rem;
+    }
+    .welcome__text{
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+    }
+    .welcome__btn{
+        width: 40%;
+    }
+
+}
+@media screen and (max-width:550px){
+    .welcome__box{
+        width: 95%;
+    }
+    .welcome__title{
+        font-size: 3rem;
+    }
+    .welcome__text{
+        text-align: justify;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+    .welcome__btn{
+        margin-top: 2rem;
+        width: 60%;
+    }
+
+}
+
+@media screen and (max-width:450px){
+    .welcome__box{
+        width: 100%;
+    }
+    .welcome__title{
+        font-size: 2.5rem;
+        line-height:3.5rem;
+        margin: 1rem  0;
+    }
+    .welcome__text{
+        text-align: justify;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+}
+/*                MEDIA QUERIS              */
+
+
