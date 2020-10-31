@@ -1,7 +1,6 @@
 .skills{
     text-align: center;
     padding: 10% 0;
-    height: 100vh;
     width: 100%;
 }
 .skills__text{
@@ -42,7 +41,7 @@
     font-weight: 600;
 }
 .skills__card{
-    box-shadow: 2px 2px 4px  var(--paleta1-a);
+    box-shadow: 1px 1px 3px var(--paleta1-a);
     padding: 1rem;
     border-radius: 7px;
     max-width: 600px;
