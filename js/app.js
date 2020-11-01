@@ -17,3 +17,19 @@ const showMenu = (e)=>{
 }
 
 $btnMenu.addEventListener('click',showMenu);
+
+
+
+const $menu = document.querySelectorAll('.main-menu__option');
+const $sections = document.querySelectorAll('.wrapper section');
+$menu.forEach( (element,index) =>{
+    element.addEventListener('click', e=>{
+        $sections.forEach( sctElement =>{
+            if(index ==  sctElement.id){
+                sctElement.classList.add('open-section');
+            }else{
+                sctElement.classList.remove('open-section');
+            }
+        })
+    })
+})
