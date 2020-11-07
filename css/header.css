@@ -26,10 +26,11 @@
     position: relative;
     z-index: 20;
 }
-
+.main-menu__option--active,
 .main-menu__option:hover{
     border-color: var(--paleta1-b);
 }
+
 .hero__menu{
     color: var(--paleta1-b);
     padding: 10px ;

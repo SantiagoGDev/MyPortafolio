@@ -1,0 +1,113 @@
+.projects{
+    display: none;
+    padding: 10% 0;
+}
+.projects__box{
+    padding: 5%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.projects__card{
+    flex: 1 1 500px;
+
+    margin: 20px;
+
+    height: 450px;
+
+    border: 2px solid #bbb;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+.projects__card-img{
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+.projects__card-box{
+    padding: 1rem;
+
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+
+    background: linear-gradient(#0000009e,#2a88b591);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    transition: all ease 2s;
+    border-radius: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.projects__card:hover .projects__card-box{
+    left: 0;
+}
+.projects__card-title{
+    color: var(--paleta1-c);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.projects__card-tech{
+    font-weight: bold;
+    color: var(--paleta1-d);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.projects__card-icon{
+    margin-left: 10px;
+    font-size: 2rem;
+}
+.projects__card-description{
+    text-align: justify;
+    line-height: 25px;
+    margin: 10px 0;
+}
+.projects__card--link{
+    color: var(--paleta1-d);
+    background: var(--paleta1-b);
+    text-decoration: none;
+    border: 2px solid  transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+    align-self: flex-end;
+    transition: all ease 1s;
+    font-weight: bolder;
+}
+.projects__card--link:hover{
+    color: var(--paleta1-b);
+    background: none;
+    border-color: var(--paleta1-b);
+}
+
+@media screen and (max-width:1500px){
+    .projects__card{
+        flex: 1 1 400px;
+        height: 430px;
+    }   
+}
+@media screen and (max-width:550px){
+    .projects__box{padding: 2.5%}
+    .projects__card-box{padding: .5rem}
+    .projects__card-title{font-size: 1.8rem}
+    .projects__card-description{line-height: 22px}
+    .projects__card--link{padding: 8px 20px}
+    .projects__card{
+        margin: 20px 5px;
+        flex: 1 1 280px;
+        height: 350px;
+    }    
+
+}
+@media screen and (max-width:450px){
+    .projects__box{padding: 1%}
+    .projects__card-title{font-size: 1.4rem;}
+    .projects__card-description{line-height: 20px;}
+}

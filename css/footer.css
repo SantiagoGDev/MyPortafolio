@@ -15,8 +15,7 @@ footer{
 .ft__box{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    border: 1px solid #fff;
-    box-shadow: 2px 2px 5px gray;
+    box-shadow: 1px 1px 5px #D1D9E6, -1px -1px 5px #ecf0f3;
     align-items: center;
     justify-items: center;
     padding:5%;

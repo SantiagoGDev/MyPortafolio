@@ -1,13 +1,14 @@
 /*                Welcome              */
 .welcome{
     background: linear-gradient(rgb(0 0 0 / 60%),rgb(0 0 0 / 78%)), url(../img/welcome.jpg) no-repeat center/cover fixed;
-    padding-bottom: 10%;
+    padding-bottom: 20%;
     height: 100vh;
     position: relative;
 }
 .welcome__box{
     width: 80%;
     height: 100%;
+    
     margin: auto;
     position: relative;
     z-index: 10;

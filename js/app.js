@@ -24,9 +24,13 @@ const $menu = document.querySelectorAll('.main-menu__option');
 const $sections = document.querySelectorAll('.wrapper section');
 $menu.forEach( (element,index) =>{
     element.addEventListener('click', e=>{
+        $menu.forEach( btn =>{
+            btn.classList.remove('main-menu__option--active')
+        })
         $sections.forEach( sctElement =>{
             if(index ==  sctElement.id){
                 sctElement.classList.add('open-section');
+                e.target.classList.add('main-menu__option--active')
             }else{
                 sctElement.classList.remove('open-section');
             }

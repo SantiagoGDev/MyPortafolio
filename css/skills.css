@@ -8,6 +8,7 @@
 .bloque{
     width: 80%;
     margin: auto;
+    text-align: center;
 }
 
 .bloque__title{
@@ -16,11 +17,9 @@
     margin: 10px;
     word-wrap: break-word;
     position: relative;
-    text-align: center;
 }
 .bloque__title:after{
     content: '';
-    display: inline-block;
     position: absolute;
     top: -100%;
     width: 20%;
@@ -88,6 +87,7 @@
     height: 10px;
     background: var(--paleta1-c);
 }
+.progress-bar--git:after,
 .progress-bar--css:after{
     width: 60%;
 }
