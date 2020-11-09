@@ -3,6 +3,7 @@
 @import 'welcome.css';
 @import 'skills.css';
 @import 'projects.css';
+@import 'contact.css';
 @import 'footer.css';
 :root{
     --paleta1-a:hsl(223, 45%, 11%);
@@ -37,7 +38,9 @@ body{
     font-size: 16px;
     background: #ecf0f3;
 }
-
+.close{
+    display: none;
+}
 .open-section{
     display: block;
 }
