@@ -24,11 +24,15 @@
 .contact-form__input{
     width: 100%;
     padding: 20px 10px;
-    border: none;
+    border: 3px solid var(--paleta1-c);
+    border-radius: 7px;
     outline: none;
     resize: none;
     color: var(--paleta1-c);
     font-weight: bold;
+}
+.contact-form__input--incorrect{
+    border-color: var(--paleta1-b);
 }
 .contact-form__btn{
     outline: none;
@@ -45,6 +49,16 @@
     color:var(--paleta1-b);
     border-color: var(--paleta1-b);
 } 
+
+.contact-form__text{
+    color:#ddd;
+    font-weight: bold;
+    display: none;
+}
+
+.contact-form__text--open{
+    display: block;
+}
 
 @media screen and (max-width:500px){
     .contact-form{

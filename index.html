@@ -13,10 +13,9 @@
     <header class="hero">
         <p class="hero__logo">Santiago</p>
         <nav class="main-menu">
-            <span class="main-menu__option main-menu__option--active">Inicio</span>
-            <span class="main-menu__option">Proyectos</span>
-            <span class="main-menu__option">Contacto</span>
-            <span class="main-menu__option">Loquesea</span>
+            <a href="#inicio" class="main-menu__option main-menu__option--active">Inicio</a>
+            <a href="#projects" class="main-menu__option">Proyectos</a>
+            <a href="#contact" class="main-menu__option">Contacto</a>
         </nav>
         <span class="icon icon-menu hero__menu"></span>
     </header>
@@ -30,7 +29,7 @@
         <div class="wave"></div>
     </section>
     <div class="wrapper" id="abajo">
-        <section class="skills  open-section" id="0">
+        <section class="skills  open-section" id="inicio" change="0">
             <article class="bloque">
                 <h2 class="bloque__title">Conocimientos</h2>
                 <p class="bloque__parrafo">
@@ -88,7 +87,7 @@
                 </div>
             </article>
         </section>
-        <section class="projects " id="1">
+        <section class="projects " id="projects" change="1">
             <article class="bloque">
                 <h2 class="bloque__title">Proyectos</h2>
                 <p class="bloque__parrafo">
@@ -187,31 +186,31 @@
                 </div>
             </article>
         </section>
-        <section class="contact" id="2">
+        <section class="contact" id="contact" change="2">
             <article class="bloque">
                 <h2 class="bloque__title">Contactame</h2>
                 <p class="bloque__parrafo">
                     Trabajemos juntos y creemos lo que necesitas para crecer y poder avanzar en tu futuro como persona o como negocio.
                 </p>
             </article>
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form">
                 <div class="contact-form__component">
                     <label for="name" class="contact-form__label">Nombre Completo</label>
-                    <input type="text" id="name" class="contact-form__input" placeholder="Escriba su nombre">
+                    <input type="text" id="name" class="contact-form__input" placeholder="Escriba su nombre" required >
+                    <p class="contact-form__text">Solo se permiten letras y hasta una longitud de 25 caracteres.</p>
                 </div>
                 <div class="contact-form__component">
                     <label for="email" class="contact-form__label">Email</label>
-                    <input type="text" id="email" class="contact-form__input" placeholder="Escriba su e-mail">
+                    <input type="text" id="email" class="contact-form__input" placeholder="Escriba su e-mail" required>
+                    <p class="contact-form__text">Solo se permiten correos validos.</p>
                 </div>
                 <div class="contact-form__component">
                     <label for="message" class="contact-form__label">Message </label>
                     <textarea  id="message" cols="30" rows="10" placeholder="Escriba su mensaje" class="contact-form__input"></textarea>
+                    <p class="contact-form__text">El mensaje no puede tener simbolos extraños.</p>
                 </div>
-                <button class="contact-form__btn">Enviar</button>
+                <button class="contact-form__btn" id="btn-form">Enviar</button>
             </form>
-        </section>
-        <section class="projects" id="3">
-            Loquesea
         </section>
     </div >
     <footer>
