@@ -1,43 +1,42 @@
 let aux = true;
 const $btnMenu = document.querySelector('.hero__menu');
+const $menu = document.querySelector('.main-menu');
 
-const showMenu = (e)=>{
-    const $menu = document.querySelector('.main-menu');
-    $menu.classList.toggle('main-menu--open');
+const openMenu = function(){
+    $menu.classList.add('main-menu--open');
+    $btnMenu.classList.remove('icon-menu');
+    $btnMenu.classList.add('icon-close');
+    aux = false;
+}
 
-    if(aux){
-        $btnMenu.classList.remove('icon-menu');
-        $btnMenu.classList.add('icon-close');
-        aux = false;
-    }else{
-        $btnMenu.classList.add('icon-menu');
-        $btnMenu.classList.remove('icon-close');
-        aux = true;
-    }
+const closeMenu = function(){
+    $menu.classList.remove('main-menu--open');
+    $btnMenu.classList.add('icon-menu');
+    $btnMenu.classList.remove('icon-close');
+    aux = true;
+}
+
+const showMenu = function(){
+    return aux ? openMenu() : closeMenu(); 
 }
 
 $btnMenu.addEventListener('click',showMenu);
 
 //Paginacion del menu principal
 
-const $menu = document.querySelectorAll('.main-menu__option');
+const $itemsMenu = document.querySelectorAll('.main-menu__option');
 const $sections = document.querySelectorAll('.wrapper section');
-$menu.forEach( (element,index) =>{
-    element.addEventListener('click', e=>{
-        //Cerrar Menu
-        document.querySelector('.main-menu').classList.remove('main-menu--open');
-        $btnMenu.classList.add('icon-menu');
-        $btnMenu.classList.remove('icon-close');
-        aux = true;
-       //Cerrar Menu
 
-    
+$itemsMenu.forEach( (element,index) =>{
+    element.addEventListener('click', e=>{
+        closeMenu()
+
        //Cambiando de section y dejando el active en le boton presionado
-        $menu.forEach( btn =>{
+        $itemsMenu.forEach( btn =>{
             btn.classList.remove('main-menu__option--active')
         })
         $sections.forEach( sctElement =>{
-            if(index ==  sctElement.getAttribute('change')){
+            if(index ==  sctElement.getAttribute('data-change')){
                 sctElement.classList.add('open-section');
                 e.target.classList.add('main-menu__option--active')
             }else{
@@ -56,6 +55,7 @@ function validateForm(){
     const $inputs = document.querySelectorAll('.contact-form__input'),
           $form = document.getElementById('contact-form');
 
+          
     const expresiones = {
         nombre: /^[a-zA-ZÁ\sñÑáéíóúÁÉÍÓÚ]{1,25}$/,
         correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -96,8 +96,10 @@ function validateForm(){
     $form.addEventListener('submit', e =>{
         e.preventDefault();
         if(campos.nombre && campos.correo && campos.mensaje){
-            alert('mensaje Enviado');
-            $form.reset();
+            alert('Mensaje Enviado')
+            $form.reset()
+        }else{
+            alert('Debe completar correctament los campos')
         }
     })
 
