@@ -22,30 +22,41 @@ const showMenu = function(){
 
 $btnMenu.addEventListener('click',showMenu);
 
-//Paginacion del menu principal
+// Paginacion del menu principal
 
-const $itemsMenu = document.querySelectorAll('.main-menu__option');
-const $sections = document.querySelectorAll('.wrapper section');
 
-$itemsMenu.forEach( (element,index) =>{
-    element.addEventListener('click', e=>{
-        closeMenu()
 
-       //Cambiando de section y dejando el active en le boton presionado
-        $itemsMenu.forEach( btn =>{
-            btn.classList.remove('main-menu__option--active')
+const showSections = () =>{
+    const $itemsMenu = document.querySelectorAll('.main-menu__option');
+    const $sections =  document.getElementById('sections').content.querySelectorAll('section')
+    const $contenedor = document.querySelector('.wrapper');
+    $contenedor.appendChild($sections[0])
+
+    $itemsMenu.forEach( (element,index) =>{
+        element.addEventListener('click', e=>{
+            closeMenu()
+
+           //Cambiando de section y dejando el active en le boton presionado
+            $itemsMenu.forEach( btn =>{
+                btn.classList.remove('main-menu__option--active') 
+            })
+            $sections.forEach( sctElement =>{
+                if(index == sctElement.getAttribute('data-change')){
+                    $contenedor.innerHTML = '';
+                    $contenedor.appendChild(sctElement);
+                    e.target.classList.add('main-menu__option--active')
+
+                    if(sctElement.getAttribute('data-change') == 2){
+                        validateForm()
+                    }
+                }
+            })
+            //Cambiando de section y dejando el active en le boton presionado
         })
-        $sections.forEach( sctElement =>{
-            if(index ==  sctElement.getAttribute('data-change')){
-                sctElement.classList.add('open-section');
-                e.target.classList.add('main-menu__option--active')
-            }else{
-                sctElement.classList.remove('open-section');
-            }
-        })
-        //Cambiando de section y dejando el active en le boton presionado
     })
-})
+
+}
+
 
 
 
@@ -99,10 +110,13 @@ function validateForm(){
             alert('Mensaje Enviado')
             $form.reset()
         }else{
-            alert('Debe completar correctament los campos')
+            alert('Debe completar correctamente los campos')
         }
     })
 
 }
 
-validateForm()
+
+
+
+document.addEventListener('DOMContentLoaded',showSections);
